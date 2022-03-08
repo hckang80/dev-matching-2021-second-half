@@ -1,6 +1,6 @@
-import ProductListPage from './ProductListPage.js'
-import ProductDetailPage from './ProductDetailPage.js'
-import CartPage from './CartPage.js'
+import ProductListPage from './pages/ProductListPage.js'
+import ProductDetailPage from './pages/ProductDetailPage.js'
+import CartPage from './pages/CartPage.js'
 
 export default function App ({ $target }) {
   this.route = () => {
