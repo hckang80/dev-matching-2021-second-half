@@ -8,7 +8,7 @@ export default function ProductList ({ $target, state }) {
     if (!this.state) return
     $products.innerHTML = this.state.map(item => {
       return `<li class="product-item">
-        <img src="${item.image}" alt="" width="150">
+        <picture><img src="${item.image}" alt=""></picture>
         <div class="product-item__info">
           <div class="product-item__title">${item.title}</div>
           <div class="product-item__price">${item.price}</div>
