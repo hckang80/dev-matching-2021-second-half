@@ -10,7 +10,8 @@ export default function App ({ $target }) {
 
     const router = {
       '/products' () {
-        new ProductDetailPage({ $target }).render()
+        const [,, id] = pathname.split('/')
+        new ProductDetailPage({ $target, id }).render()
       },
       '/cart' () {
         new CartPage({ $target }).render()
