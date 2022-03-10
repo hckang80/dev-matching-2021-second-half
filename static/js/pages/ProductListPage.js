@@ -9,9 +9,14 @@ export default function ProductListPage ({ $target }) {
     $target.appendChild($page)
   }
 
+  this.setState = (state) => {
+    this.state = state
+    this.render()
+  }
+
   const fetchProducts = async () => {
     const products = await request('/products?sort=desc')
-    console.log({ products })
+    this.setState(products)
   }
 
   fetchProducts()
