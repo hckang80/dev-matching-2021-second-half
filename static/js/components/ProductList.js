@@ -5,9 +5,9 @@ export default function ProductList ({ $target, state }) {
   this.state = state
 
   this.render = () => {
-    if (!this.state) return
+    if (!this.state) return 'Loading...'
     $products.innerHTML = this.state.map(item => {
-      return `<li class="product-item">
+      return `<li class="product-item" data-id="${item.id}">
         <picture><img src="${item.image}" alt="" title="${item.title}"></picture>
         <div class="product-item__info">
           <div class="product-item__title">${item.title}</div>
@@ -18,4 +18,10 @@ export default function ProductList ({ $target, state }) {
   }
 
   this.render()
+
+  $products.addEventListener('click', (e) => {
+    const $li = e.target.closest('li')
+    const { id } = $li.dataset
+    id && console.log('GO DETAIL')
+  })
 }
