@@ -1,3 +1,5 @@
+import { routeChange } from '../router.js'
+
 export default function ProductList ({ $target, state }) {
   const $products = document.createElement('ul')
   $target.appendChild($products)
@@ -22,6 +24,6 @@ export default function ProductList ({ $target, state }) {
   $products.addEventListener('click', (e) => {
     const $li = e.target.closest('li')
     const { id } = $li.dataset
-    id && console.log('GO DETAIL')
+    id && routeChange(`products/${id}`)
   })
 }

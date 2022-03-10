@@ -1,6 +1,7 @@
 import ProductListPage from './pages/ProductListPage.js'
 import ProductDetailPage from './pages/ProductDetailPage.js'
 import CartPage from './pages/CartPage.js'
+import { init } from './router.js'
 
 export default function App ({ $target }) {
   this.route = () => {
@@ -22,6 +23,8 @@ export default function App ({ $target }) {
 
     router[`/${path}`] && router[`/${path}`]()
   }
+
+  init(this.route)
 
   this.route()
 }
