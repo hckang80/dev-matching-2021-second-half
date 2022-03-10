@@ -1,4 +1,5 @@
 import { request } from '../api.js'
+import ProductList from '../components/ProductList.js'
 
 export default function ProductListPage ({ $target }) {
   const $page = document.createElement('div')
@@ -11,7 +12,7 @@ export default function ProductListPage ({ $target }) {
 
   this.setState = (state) => {
     this.state = state
-    this.render()
+    new ProductList({ $target: $page, state: this.state })
   }
 
   const fetchProducts = async () => {
