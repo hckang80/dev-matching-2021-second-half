@@ -6,17 +6,26 @@ export default function ProductDetailPage ({ $target, id }) {
   $page.innerHTML = '<h1>상품 상세</h1>'
 
   this.state = {
-    id
+    id,
+    product: null
   }
 
   this.render = () => {
     $target.appendChild($page)
   }
 
+  this.setState = (state) => {
+    this.state = state
+    console.log({ $target: $page, state: this.state })
+  }
+
   const fetchProduct = async () => {
     const { id } = this.state
     const product = await request(`/products/${id}`)
-    console.log(product)
+    this.setState({
+      ...this.state,
+      product
+    })
   }
 
   fetchProduct()
