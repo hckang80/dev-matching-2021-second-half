@@ -1,7 +1,7 @@
 import ProductListPage from './pages/ProductListPage.js'
 import ProductDetailPage from './pages/ProductDetailPage.js'
 import CartPage from './pages/CartPage.js'
-import { init } from './router.js'
+import { init } from './modules/router.js'
 
 export default function App ({ $target }) {
   this.route = () => {

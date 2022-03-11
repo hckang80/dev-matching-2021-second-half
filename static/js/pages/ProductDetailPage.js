@@ -1,4 +1,4 @@
-import { request } from '../api.js'
+import { request } from '../modules/api.js'
 
 export default function ProductDetailPage ({ $target, id }) {
   const $page = document.createElement('div')
